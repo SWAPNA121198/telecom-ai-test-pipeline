@@ -31,3 +31,11 @@
 ### 6. My project in one line
 - I am building a system that tests a telecom app automatically,
   and uses AI to fix tests that break because of renamed ids.
+
+
+### Day 1: installing Python in Vscode 
+- Installed Git in pc
+- Installed Python in Vs code
+- in VS code singed in using Git
+- Cloned GitHub repo in to my VS code
+- Im using Git tool to save my work im using GitHub website.
