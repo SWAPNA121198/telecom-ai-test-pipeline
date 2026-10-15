@@ -38,4 +38,8 @@
 - Installed Python in Vs code
 - in VS code singed in using Git
 - Cloned GitHub repo in to my VS code
-- Im using Git tool to save my work im using GitHub website.
+- Im using Git tool to save my work im using GitHub website
+-git status: shows what changed.
+git add: chooses which changed files go into the next snapshot.
+git commit: saves the snapshot on my laptop, with a message.
+git push: uploads the snapshots to GitHub
