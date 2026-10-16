@@ -43,3 +43,13 @@
 git add: chooses which changed files go into the next snapshot.
 git commit: saves the snapshot on my laptop, with a message.
 git push: uploads the snapshots to GitHub
+
+## Day 2
+- Built a small telecom app with 3 pages: login -> plans -> recharge
+- Every box and button has a hidden id, like login-btn and recharge-btn
+- Tests find elements using these ids (locators)
+- I found ids with right-click -> Inspect
+- The app only works while my server is running: python -m http.server 8000
+- Server stopped = browser says "site can't be reached"
+- If one page file is missing, the flow breaks (I forgot plans.html and login failed)
+- Test data: mobile 9876543210, password Test@123, failed card 0000000000000000
