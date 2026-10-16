@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Telecom Portal - Login</title>
+</head>
+<body>
+  <h1>Telecom Portal</h1>
+  <h2>Login</h2>
+
+  <label>Mobile number</label><br>
+  <input id="mobile-number" type="text" placeholder="Enter mobile number"><br><br>
+
+  <label>Password</label><br>
+  <input id="password" type="password" placeholder="Enter password"><br><br>
+
+  <button id="login-btn" onclick="login()">Login</button>
+
+  <p id="error-msg" style="color:red;"></p>
+
+  <script>
+    function login() {
+      var mobile = document.getElementById("mobile-number").value;
+      var pass = document.getElementById("password").value;
+      if (mobile === "9876543210" && pass === "Test@123") {
+        window.location.href = "plans.html";
+      } else {
+        document.getElementById("error-msg").innerText = "Invalid mobile number or password";
+      }
+    }
+  </script>
+</body>
+</html>
