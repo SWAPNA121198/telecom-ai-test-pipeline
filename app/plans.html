@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Telecom Portal - Plans</title>
+</head>
+<body>
+  <h1>Telecom Portal</h1>
+  <h2>Choose a Prepaid Plan</h2>
+
+  <div id="plan-basic">
+    <h3>Basic Plan</h3>
+    <p>AED 50 - 5 GB data, 28 days</p>
+    <button id="select-basic-btn" onclick="selectPlan('Basic', 50)">Select</button>
+  </div>
+  <br>
+
+  <div id="plan-standard">
+    <h3>Standard Plan</h3>
+    <p>AED 100 - 15 GB data, 28 days</p>
+    <button id="select-standard-btn" onclick="selectPlan('Standard', 100)">Select</button>
+  </div>
+  <br>
+
+  <div id="plan-premium">
+    <h3>Premium Plan</h3>
+    <p>AED 200 - 50 GB data, 28 days</p>
+    <button id="select-premium-btn" onclick="selectPlan('Premium', 200)">Select</button>
+  </div>
+
+  <script>
+    function selectPlan(name, price) {
+      window.location.href = "recharge.html?plan=" + name + "&amount=" + price;
+    }
+  </script>
+</body>
+</html>
