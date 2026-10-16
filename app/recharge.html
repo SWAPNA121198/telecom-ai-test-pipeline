@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Telecom Portal - Recharge</title>
+</head>
+<body>
+  <h1>Telecom Portal</h1>
+  <h2>Recharge</h2>
+
+  <p id="plan-summary"></p>
+
+  <label>Mobile number to recharge</label><br>
+  <input id="recharge-mobile" type="text" placeholder="Enter 10-digit mobile number"><br><br>
+
+  <label>Card number</label><br>
+  <input id="card-number" type="text" placeholder="Enter 16-digit card number"><br><br>
+
+  <button id="recharge-btn" onclick="recharge()">Recharge Now</button>
+
+  <p id="message" style="font-weight:bold;"></p>
+
+  <script>
+    var params = new URLSearchParams(window.location.search);
+    var plan = params.get("plan");
+    var amount = params.get("amount");
+    document.getElementById("plan-summary").innerText =
+      "Selected plan: " + plan + " - AED " + amount;
+
+    function recharge() {
+      var mobile = document.getElementById("recharge-mobile").value;
+      var card = document.getElementById("card-number").value;
+      var msg = document.getElementById("message");
+
+      if (mobile.length !== 10 || isNaN(mobile)) {
+        msg.style.color = "red";
+        msg.innerText = "Invalid mobile number";
+      } else if (card === "0000000000000000") {
+        msg.style.color = "red";
+        msg.innerText = "Payment failed. Please try another card";
+      } else if (card.length !== 16 || isNaN(card)) {
+        msg.style.color = "red";
+        msg.innerText = "Invalid card number";
+      } else {
+        msg.style.color = "green";
+        msg.innerText = "Recharge successful";
+      }
+    }
+  </script>
+</body>
+</html>
