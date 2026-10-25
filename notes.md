@@ -72,3 +72,9 @@ git push: uploads the snapshots to GitHub
 - Run everything with: python -m pytest tests --headed --slowmo=300
 - --collect-only -q lists the tests pytest finds, which helps when the count is wrong
 - An import line (from playwright.sync_api import expect) belongs at the top of the file, not inside a function
+- Built a GitHub Actions pipeline: .github/workflows/tests.yml
+- On every push, GitHub installs Python, Playwright and the browser, starts my app and runs all 10 tests
+- requirements.txt lists what the tests need; it lives in the main folder
+- .gitignore stops files like __pycache__ from going into the repo
+- Green tick = all tests passed; red cross = something failed, open the failing step to read the log
+- Problem I hit: the .github folder was never created, so the Actions tab was empty
