@@ -53,3 +53,22 @@ git push: uploads the snapshots to GitHub
 - Server stopped = browser says "site can't be reached"
 - If one page file is missing, the flow breaks (I forgot plans.html and login failed)
 - Test data: mobile 9876543210, password Test@123, failed card 0000000000000000
+
+## Day 3
+- Installed Playwright (controls the browser) and pytest (runs tests, shows passed or failed)
+- Wrote 6 tests: 2 login, 4 recharge
+- page.goto opens a page, page.fill types, page.click clicks, expect checks the result
+- #login-btn means the element whose id is login-btn
+- Run all tests: python -m pytest tests --headed --slowmo=500
+- ERR_CONNECTION_REFUSED means the app server is not running
+- Wrong locator (#login-button) caused a timeout failure, but the app was fine (a false failure)
+- Test files start with test_ and end in .py
+
+
+## Day 4
+- Automated the remaining 4 manual test cases, so all 10 are automated
+- Tests are split across 3 files: test_login.py, test_plans.py, test_recharge.py
+- expect(...).to_contain_text checks part of a text, to_be_visible checks an element is shown
+- Run everything with: python -m pytest tests --headed --slowmo=300
+- --collect-only -q lists the tests pytest finds, which helps when the count is wrong
+- An import line (from playwright.sync_api import expect) belongs at the top of the file, not inside a function
