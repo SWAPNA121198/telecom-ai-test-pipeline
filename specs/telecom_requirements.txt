@@ -1,0 +1,13 @@
+R1. A user can log in with a registered mobile number and password. Invalid details must show the error "Invalid mobile number or password".
+
+R2. After login, the user sees three prepaid plans: Basic (AED 50), Standard (AED 100) and Premium (AED 200). Each plan has a Select button.
+
+R3. Selecting a plan opens the recharge page and shows the chosen plan and its amount.
+
+R4. The mobile number to recharge must be exactly 10 digits. Anything else must show the error "Invalid mobile number".
+
+R5. The card number must be exactly 16 digits. Anything else must show the error "Invalid card number".
+
+R6. A declined card must show the error "Payment failed. Please try another card".
+
+R7. A valid mobile number and card must show the message "Recharge successful".
