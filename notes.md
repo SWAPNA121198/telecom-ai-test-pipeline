@@ -78,3 +78,13 @@ git push: uploads the snapshots to GitHub
 - .gitignore stops files like __pycache__ from going into the repo
 - Green tick = all tests passed; red cross = something failed, open the failing step to read the log
 - Problem I hit: the .github folder was never created, so the Actions tab was empty
+
+## Day 5: AI test generation
+- Wrote requirements R1 to R7 in specs/telecom_requirements.txt
+- Created a Gemini API key, stored as an environment variable (never in the repo)
+- ai/generate_tests.py reads the requirements, sends them to the AI, saves test cases to ai/generated_test_cases.md
+- A prompt gives the AI a role, rules and an output format
+- Reviewed the AI's 12 cases against my 10: 8 duplicates, 4 new boundary cases (9 and 11 digit mobile, 15 and 17 digit card), 0 invented
+- Automated the 4 new cases, so the suite is now 14 tests
+- AI drafts, I review. The AI gave vague data, so I supplied exact data and messages
+- Model names change: a 404 error names the current model
