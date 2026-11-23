@@ -49,4 +49,38 @@ def test_letters_in_mobile_number(page):
     page.click("#recharge-btn")
     expect(page.locator("#message")).to_have_text("Invalid mobile number")
 
+
+    
+
+def test_mobile_number_9_digits(page):
+    open_recharge_page(page)
+    page.fill("#recharge-mobile", "123456789")
+    page.fill("#card-number", "1111222233334444")
+    page.click("#recharge-btn")
+    expect(page.locator("#message")).to_have_text("Invalid mobile number")
+
+
+def test_mobile_number_11_digits(page):
+    open_recharge_page(page)
+    page.fill("#recharge-mobile", "12345678901")
+    page.fill("#card-number", "1111222233334444")
+    page.click("#recharge-btn")
+    expect(page.locator("#message")).to_have_text("Invalid mobile number")
+
+
+def test_card_number_15_digits(page):
+    open_recharge_page(page)
+    page.fill("#recharge-mobile", "9876543210")
+    page.fill("#card-number", "123456789012345")
+    page.click("#recharge-btn")
+    expect(page.locator("#message")).to_have_text("Invalid card number")
+
+
+def test_card_number_17_digits(page):
+    open_recharge_page(page)
+    page.fill("#recharge-mobile", "9876543210")
+    page.fill("#card-number", "12345678901234567")
+    page.click("#recharge-btn")
+    expect(page.locator("#message")).to_have_text("Invalid card number")
+
     
