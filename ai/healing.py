@@ -1,3 +1,4 @@
+import json
 from datetime import datetime
 from google import genai
 
@@ -32,8 +33,15 @@ def heal_click(page, locator, description):
     if page.locator(new_locator).count() != 1:
         raise AssertionError(f"AI suggested '{new_locator}', which does not match exactly one element")
 
+    # 4. Use it for this run only
     page.click(new_locator, timeout=3000)
 
-    # 4. Write down what was healed, for a human to review
-    with open("ai/healing_report.md", "a", encoding="utf-8") as f:
-        f.write(f"- {datetime.now():%Y-%m-%d %H:%M} | old: `{locator}` | new: `{new_locator}` | element: {description}\n")
+    # 5. Save the suggestion as PENDING, for a human to review
+    record = {
+        "time": f"{datetime.now():%Y-%m-%d %H:%M}",
+        "old": locator,
+        "new": new_locator,
+        "element": description,
+    }
+    with open("ai/healing_pending.jsonl", "a", encoding="utf-8") as f:
+        f.write(json.dumps(record) + "\n")

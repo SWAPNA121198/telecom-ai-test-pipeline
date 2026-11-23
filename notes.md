@@ -88,3 +88,10 @@ git push: uploads the snapshots to GitHub
 - Automated the 4 new cases, so the suite is now 14 tests
 - AI drafts, I review. The AI gave vague data, so I supplied exact data and messages
 - Model names change: a 404 error names the current model
+
+## Day 6: Self-healing
+- ai/healing.py: if a locator fails, the AI reads the page HTML and suggests a new selector
+- The helper checks that the suggestion matches exactly one element, and writes a healing report
+- ai/measure_healing.py broke 9 locators on purpose: healed 9 of 9 in my small app
+- Limits: small app, clear descriptions, one run
+- Run with python -m ai.measure_healing (dots, so Python can import ai.healing)
