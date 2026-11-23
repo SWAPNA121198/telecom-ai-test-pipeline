@@ -20,7 +20,6 @@ Automated UI tests find elements using locators such as `#login-btn`. When a dev
 3. **Generates test cases with AI.** An LLM reads written requirements (`specs/`) and drafts test cases. I review them against my own.
 4. **Heals broken locators with AI.** When a locator is not found, the AI reads the page HTML and suggests a new selector. The suggestion is saved as *pending*, and the test files only change after a human approves it.
 
-## How it fits together
 
 ## How it fits together
 
