@@ -6,7 +6,7 @@ Project created using devops technology and AI testing on telecom domain
 # Telecom AI Test Pipeline 
 
 A test automation project for a small telecom web app (login, prepaid plans, recharge). It combines **Playwright UI tests**, a **GitHub Actions CI pipeline**, and **AI** that drafts test cases and repairs broken locators, with a human approving every fix.
-[Watch the self-healing demo (video)](docs/self-healing-demo.mp4)
+[Watch the self-healing demo (video)](C:\Projects\telecom-ai-test-pipeline\docs)
 
 Built by a manual tester (5 years, telecom domain) moving into automation, DevOps and AI-assisted testing.
 
