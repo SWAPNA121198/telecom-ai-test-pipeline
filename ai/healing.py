@@ -45,3 +45,4 @@ def heal_click(page, locator, description):
     }
     with open("ai/healing_pending.jsonl", "a", encoding="utf-8") as f:
         f.write(json.dumps(record) + "\n")
+        print(f"\n[self-healing] '{locator}' not found -> AI suggested '{new_locator}'")
