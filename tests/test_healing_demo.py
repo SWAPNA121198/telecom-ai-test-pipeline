@@ -15,5 +15,5 @@ def test_login_heals_broken_locator(page):
     page.fill("#mobile-number", "9876543210")
     page.fill("#password", "Test@123")
     # "#login-button" is a WRONG id on purpose; the real one is "#login-btn"
-    heal_click(page, "#login-btn", "the Login button")
+    heal_click(page, "#login-button", "the Login button")
     expect(page.locator("h2")).to_have_text("Choose a Prepaid Plan")
